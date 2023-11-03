@@ -33,7 +33,7 @@ chain = ConversationalRetrievalChain.from_llm(llm=llm,chain_type='stuff',
                                               retriever=vector_store.as_retriever(search_kwargs={"k":2}),
                                               memory=memory)
 
-st.title("Uplift AI 🧑🏽‍⚕️")
+st.title("Uplift AI 🧑🏽")
 def conversation_chat(query):
     result = chain({"question": query, "chat_history": st.session_state['history']})
     st.session_state['history'].append((query, result["answer"]))
